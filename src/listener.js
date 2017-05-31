@@ -150,6 +150,10 @@ export default class ReactiveListener {
         })
     }
 
+    unload () {
+        //nope
+    }
+
     /**
      * render image
      * @param  {String} state to render // ['loading', 'src', 'error']

@@ -43,7 +43,10 @@ export default function (Vue) {
             this.lazyLoadHandler = throttle(() => {
                 let catIn = false
                 this.ListenerQueue.forEach(listener => {
-                    if (listener.state.loaded) return
+                    if (listener.state.loaded) {
+                        catIn = listener.checkInView()
+                        !catIn && listener.unload()
+                    }
                     catIn = listener.checkInView()
                     catIn && listener.load()
                 })
