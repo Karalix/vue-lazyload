@@ -44,11 +44,11 @@ export default function (Vue) {
                 let catIn = false
                 this.ListenerQueue.forEach(listener => {
                     if (listener.state.loaded) {
+                        if(!listener.checkInView()) listener.unload()
+                    } else {
                         catIn = listener.checkInView()
-                        !catIn && listener.unload()
+                        catIn && listener.load()
                     }
-                    catIn = listener.checkInView()
-                    catIn && listener.load()
                 })
             }, 200)
         }
