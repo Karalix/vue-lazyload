@@ -41,7 +41,8 @@ export default class ReactiveListener {
         this.state = {
             error: false,
             loaded: false,
-            rendered: false
+            rendered: false,
+            rested: false
         }
     }
 
@@ -78,6 +79,16 @@ export default class ReactiveListener {
      */
     getRect () {
         this.rect = this.el.getBoundingClientRect()
+    }
+
+    /**
+     *  check el is near
+     * @return {Boolean} el is near
+     */
+    checkIsNear () {
+        this.getRect()
+        return (this.rect.top < window.innerHeight * this.options.preLoad *1.5 && this.rect.bottom > this.options.preLoadTop) &&
+            (this.rect.left < window.innerWidth * this.options.preLoad * 1.5 && this.rect.right > 0)
     }
 
     /**
@@ -150,8 +161,10 @@ export default class ReactiveListener {
         })
     }
 
-    unload () {
-        //nope
+    rest () {
+    }
+
+    unrest () {
     }
 
     /**
