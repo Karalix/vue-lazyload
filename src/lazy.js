@@ -47,7 +47,7 @@ export default function (Vue) {
                         if(!listener.state.rested && !listener.checkIsNear()){ 
                             listener.rest()
                         }
-                        if(listener.state.rested && listener.checkIsNear()){
+                        if(listener.state.rested && listener.checkInView()){
                             listener.unrest()
                         }
                     } else {
