@@ -46,7 +46,8 @@ export default function (Vue) {
                     if (listener.state.loaded) {
                         if(!listener.state.rested && !listener.checkIsNear()){ 
                             listener.rest()
-                        } else if(listener.state.rested && listener.checkIsNear()){
+                        }
+                        if(listener.state.rested && listener.checkIsNear()){
                             listener.unrest()
                         }
                     } else {
