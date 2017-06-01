@@ -17,7 +17,8 @@ export default (lazy) => {
         data () {
             return {
                 state: {
-                    loaded: false
+                    loaded: false,
+                    rested:false
                 },
                 rect: {},
                 show: false
@@ -52,9 +53,11 @@ export default (lazy) => {
                 this.$emit('show', this)
             },
             rest () {
+                this.rested = true
                 this.$emit('rest', this)
             },
             unrest () {
+                this.rested = false
                 this.$emit('unrest', this)
             }
         }

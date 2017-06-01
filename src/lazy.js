@@ -44,7 +44,7 @@ export default function (Vue) {
                 let catIn = false
                 this.ListenerQueue.forEach(listener => {
                     if (listener.state.loaded) {
-                        if(!listener.checkIsNear()){ 
+                        if(listener.state.rested && !listener.checkIsNear()){ 
                             listener.rest()
                         } else {
                             listener.unrest()
