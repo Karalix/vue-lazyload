@@ -48,6 +48,7 @@ export default function (Vue) {
                             listener.rest()
                         } else if(listener.state.rested && listener.checkInView()){
                             listener.unrest()
+                            console.log('pouet');
                         }
                     } else {
                         catIn = listener.checkInView()
