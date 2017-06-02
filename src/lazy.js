@@ -46,8 +46,7 @@ export default function (Vue) {
                     if (listener.state.loaded) {
                         if(!listener.state.rested && !listener.checkIsNear()){ 
                             listener.rest()
-                        }
-                        if(listener.state.rested && listener.checkInView()){
+                        } else if(listener.state.rested && listener.checkInView()){
                             listener.unrest()
                         }
                     } else {
@@ -55,7 +54,7 @@ export default function (Vue) {
                         catIn && listener.load()
                     }
                 })
-            }, 200)
+            }, 100)
         }
 
         /**
