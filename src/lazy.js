@@ -45,14 +45,11 @@ export default function (Vue) {
                 this.ListenerQueue.forEach(listener => {
                     if (listener.state.loaded) {
                         if(!listener.state.rested){ 
-                            if(!listener.checkIsNear()){
-                                listener.rest()
-                            }
+                            catIn = listener.checkIsNear()
+                            !catIn && listener.rest()
                         } else{
-                            if(listener.checkInView()){
-                                listener.unrest()
-                                console.log('pouet');
-                            }
+                            catIn = listener.checkInView()
+                            catIn && listener.unrest()
                         }
                     } else {
                         catIn = listener.checkInView()
