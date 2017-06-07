@@ -162,11 +162,11 @@ export default class ReactiveListener {
     }
 
     rest () {
-        this.rested = true
+        this.state.rested = true
     }
 
     unrest () {
-        this.rested = false
+        this.state.rested = false
     }
 
     /**

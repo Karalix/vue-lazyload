@@ -53,11 +53,11 @@ export default (lazy) => {
                 this.$emit('show', this)
             },
             rest () {
-                this.rested = true
+                this.state.rested = true
                 this.$emit('rest', this)
             },
             unrest () {
-                this.rested = false
+                this.state.rested = false
                 this.$emit('unrest', this)
             }
         }
