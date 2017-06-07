@@ -15,8 +15,8 @@ var banner =
 rollup.rollup({
     entry: path.resolve(__dirname, 'src/index.js'),
     plugins: [
-      babel()/*,
-      uglify()*/
+      babel(),
+      uglify()
     ]
 })
 .then(bundle => {
